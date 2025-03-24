@@ -123,17 +123,7 @@ USER_ABOUT_MESSAGE = """
 •  🖼️ Banner image: {banner_image}
 """
 METHOD_MESSAGE = """
-Current Method: {shortener}
-    
-Methods Available:
-
-> `mdlink` - Change all the links of the post to your MDisk account first and then short to {shortener} link.
-
-> `shortener` - Short all the links of the post to {shortener} link directly.
-
-> `mdisk` - Save all the links of the post to your Mdisk account.
-    
-To change method, choose it from the following options:
+Current Method: shortener
 """
 
 SHORTENER_API_MESSAGE = """<b>How To Connect API ?</b>
