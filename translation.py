@@ -11,62 +11,48 @@ For example: <code>/batch -100xxx</code>
 I'll handle the rest and get those links shortened or converted in a short time! 💪
 """
 
-START_MESSAGE = """Hi there {} 
+START_MESSAGE = """Hi there {} 👋😃
 
-Send me a link or post and I'll shorten it for you!
+Welcome to [BrieflyUrl Bot](t.me/BrieflyUrl_Help) - Your Personal URL Shortener Bot. 🌐
 
-To learn more about what I can do, just type /help.
+Just send me a link, and I'll work my magic to shorten it for you. Plus, I'll keep track of your earnings! 💰💼
 
-Method: {shortener}
-Shortener website: {brieflyurl.com}
+/shortener_api - Connect API
+/me - Your profile setting
+/help - Advanced setting
+
+New User ? Then just sign up on BrieflyUrl.com and Get Highest Upto 8$ CPM rate & 10% Refer Earning Lifetime.
 """
 
 HELP_MESSAGE = """Hey there! My name is {firstname} and I'm a link convertor and shortener bot here to make your work easier and help you earn more 💰.
 
 I have a ton of handy features to help you out, such as:
 
-- [Hyperlink](https://t.me/{username}) support 🔗
-- Button conversion support 🔘
-- Domain inclusion and exclusion options 🌐
-- Header and footer text support 📝
-- Replace username function 📎
-- Banner image support 🖼️
-- Batch conversion for channel admins only 📊
-- Channel support for admins only 📢
+•  Setup Header - /header 
+•  Setup Footer - /footer 
+•  Setup Username - /username 
+•  Setup Banner Img - /banner_image 
+•  Setup Include Domains - /include_domain  
+•  Setup Exclude Domains - /exclude_domain 
 
 Useful commands:
 
-- /start: Start me up! You probably already used this.
-- /help: Send this message; I'll tell you more about myself!
-- /batch -100xxx: To shorten or convert all posts in your channel
+•  /start Go Back to Home.
+•  /shortener_api - Setup or Change API 
+•  /me - Your profile Settings 
+
+Contact Help Support - @BrieflyUrl_Help
 """
 
 ABOUT_TEXT = """
-**My Details:**
+**Bot Details:**
 
-`🤖 Name:` ** {} **
-    
+`🤖 Name:` ** {} ** 
 `📝 Language:` [Python 3](https://www.python.org/)
-`🧰 Framework:` [Pyrogram](https://github.com/pyrogram/pyrogram)
-`👨‍💻 Developer:` [Dev](t.me/ask_admin001)
-`📢 Support:` [Talk Bot](https://t.me/ask_admin001)
-`🌐 Source Code:` [GitHub](https://github.com/kevinnadar22/URL-Shortener-V2/)
+`👨‍💻 Developer:` [Dev](t.me/BrieflyUrl)
+`📢 Support:` [Support Talk](https://t.me/BrieflyUrl_Help)
 """
 
-
-METHOD_MESSAGE = """
-Current Method: {shortener}
-    
-Methods Available:
-
-> `mdlink` - Change all the links of the post to your MDisk account first and then short to {shortener} link.
-
-> `shortener` - Short all the links of the post to {shortener} link directly.
-
-> `mdisk` - Save all the links of the post to your Mdisk account.
-    
-To change method, choose it from the following options:
-"""
 
 CUSTOM_ALIAS_MESSAGE = """For custom alias, `[link] | [custom_alias]`, Send in this format
 
@@ -91,15 +77,7 @@ Here is a list of the channels:
 HELP_REPLY_MARKUP = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("Methods", callback_data="method_command"),
-            InlineKeyboardButton("Batch", callback_data="cbatch_command"),
-        ],
-        [
             InlineKeyboardButton("Custom Alias", callback_data="alias_conf"),
-            InlineKeyboardButton("Admins", callback_data="admins_list"),
-        ],
-        [
-            InlineKeyboardButton("Channels", callback_data="channels_list"),
             InlineKeyboardButton("Home", callback_data="start_command"),
         ],
     ]
@@ -123,25 +101,6 @@ START_MESSAGE_REPLY_MARKUP = InlineKeyboardMarkup(
             InlineKeyboardButton("About", callback_data="about_command"),
         ],
         [
-            InlineKeyboardButton("Method", callback_data="method_command"),
-            InlineKeyboardButton("Close", callback_data="delete"),
-        ],
-    ]
-)
-
-METHOD_REPLY_MARKUP = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                "MDLINK", callback_data="change_method#mdlink"
-            ),
-            InlineKeyboardButton(
-                "Shortener", callback_data="change_method#shortener"
-            ),
-            InlineKeyboardButton("Mdisk", callback_data="change_method#mdisk"),
-        ],
-        [
-            InlineKeyboardButton("Back", callback_data="help_command"),
             InlineKeyboardButton("Close", callback_data="delete"),
         ],
     ]
@@ -152,46 +111,29 @@ BACK_REPLY_MARKUP = InlineKeyboardMarkup(
 )
 
 USER_ABOUT_MESSAGE = """
-🔧 Here are the current settings for this bot:
+<b>Current Setting Of Your Bot is Here:</b>
 
-- 🌐 Shortener website: {brieflyurl.com}
-
-- 🧰 Method: {shortener}
-
-- 🔌 {base_site} API: {shortener_api}
-
-- 💾 Mdisk API: {mdisk_api}
-
-- 📎 Username: @{username}
-
-- 📝 Header text:
+•  🌐 Shortener website: BrieflyUrl.com
+•  🔌 BrieflyUrl API: {shortener_api}
+•  📎 Username: @{username}
+•  📝 Header text:
 {header_text}
-
-- 📝 Footer text:
+•  📝 Footer text:
 {footer_text}
-
-🖼️ Banner image: {banner_image}
+•  🖼️ Banner image: {banner_image}
 """
 
+SHORTENER_API_MESSAGE = """<b>How To Connect API ?</b>
 
-MDISK_API_MESSAGE = """To add or update your Mdisk API, \n`/mdisk_api mdisk_api`
-            
-Ex: `/mdisk_api 6LZq851sXoPHugiKQq`
-            
-Others Mdisk Links will be automatically changed to the API of this Mdisk account
+• First Visit BrieflyUrl.com/member/tools/api
+• Copy the API Token & Comeback to the Bot.
+• Put /shortener_api [api] Replace With Your API
+• Done! Now Bot is Succesfully Connected With Your BrieflyUrl Account
 
-Get your Mdisk API from @VideoToolMoneyTreebot
-
-Current Mdisk API: `{}`"""
-
-SHORTENER_API_MESSAGE = """To add or update your Shortner Website API, 
+To add or update your Shortner Website API, 
 `/shortener_api [api]`
             
 Ex: `/shortener_api 6LZq851sXofffPHugiKQq`
-
-Current Website: {brieflyurl.com}
-
-To change your Shortener Website: /base_site brieflyurl.com
 
 Current Shortener API: `{shortener_api}`"""
 
@@ -253,7 +195,7 @@ EXCLUDE_DOMAIN_TEXT = """
 Use this option if you wish to short every link on your channel but exclude only the links from the following domains list
 
 Current Exclude Domains:
-{brieflyurl.com}
+{}
 Usage: /exclude_domain domain
 Ex: `/exclude_domain t.me, google.com`
 
