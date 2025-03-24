@@ -154,9 +154,9 @@ BACK_REPLY_MARKUP = InlineKeyboardMarkup(
 USER_ABOUT_MESSAGE = """
 🔧 Here are the current settings for this bot:
 
-- 🌐 Shortener website: {base_site}
+- 🌐 Shortener website: {brieflyurl.com}
 
-- 🧰 Method: {method}
+- 🧰 Method: {shortener}
 
 - 🔌 {base_site} API: {shortener_api}
 
@@ -189,9 +189,9 @@ SHORTENER_API_MESSAGE = """To add or update your Shortner Website API,
             
 Ex: `/shortener_api 6LZq851sXofffPHugiKQq`
 
-Current Website: {base_site}
+Current Website: {shortener}
 
-To change your Shortener Website: /base_site
+To change your Shortener Website: /base_site brieflyurl.com
 
 Current Shortener API: `{shortener_api}`"""
 
