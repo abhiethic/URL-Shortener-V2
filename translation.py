@@ -189,7 +189,7 @@ SHORTENER_API_MESSAGE = """To add or update your Shortner Website API,
             
 Ex: `/shortener_api 6LZq851sXofffPHugiKQq`
 
-Current Website: {shortener}
+Current Website: {brieflyurl.com}
 
 To change your Shortener Website: /base_site brieflyurl.com
 
@@ -253,7 +253,7 @@ EXCLUDE_DOMAIN_TEXT = """
 Use this option if you wish to short every link on your channel but exclude only the links from the following domains list
 
 Current Exclude Domains:
-{}
+{brieflyurl.com}
 Usage: /exclude_domain domain
 Ex: `/exclude_domain t.me, google.com`
 
