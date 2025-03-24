@@ -122,10 +122,6 @@ USER_ABOUT_MESSAGE = """
 {footer_text}
 •  🖼️ Banner image: {banner_image}
 """
-METHOD_MESSAGE = """
-Current Method: shortener
-"""
-
 SHORTENER_API_MESSAGE = """<b>How To Connect API ?</b>
 
 • First Visit BrieflyUrl.com/member/tools/api
